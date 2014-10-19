@@ -2,7 +2,7 @@ package models.DAO;
 
 public abstract class DAOFactory {
 
-    private static DAOFactory daoFactory;
+    private static DAOFactory daoFactory = null;
 
     protected DAOFactory() {
 
@@ -13,6 +13,7 @@ public abstract class DAOFactory {
     public abstract RoundDAO getRoundDAO();
 
     public static DAOFactory getDaoFactory() {
+        assert daoFactory != null;
         return daoFactory;
     }
 
